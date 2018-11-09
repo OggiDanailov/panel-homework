@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <% if instructor_signed_in? %> 
+        <li><%= link_to "Sign Out" , destroy_instructor_session_path, method: :delete %></li>
+        <li><%= link_to "my Profile", instructor_path(current_instructor) %></li>
+      <% end %>
+        <% if !instructor_signed_in? %>
+        <li><%= link_to "Sign in", new_instructor_session_path %></li>
+        <% end %>
+        
+    </nav>
+
+
+
+    <%= yield %>
+
+
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+  </body>
+</html>
