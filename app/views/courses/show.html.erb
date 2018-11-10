@@ -1,0 +1,9 @@
+<h1>Course: </h1>
+
+
+<div>
+	<div><%= @course.name %></div>
+	<div><%= @course.total %></div>
+</div>
+
+<%= button_to "Update Course", edit_course_path(@course), method: :get %>

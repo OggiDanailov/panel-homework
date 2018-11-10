@@ -1,0 +1,8 @@
+<h1>List of all courses:</h1>
+
+<div>
+	<div><% @courses.each do |c| %></div>
+		<div><a href="/courses/<%= c.id %>"><%= c.name %></a></div>
+		<div><%= c.total %></div>
+		<% end %>
+</div>

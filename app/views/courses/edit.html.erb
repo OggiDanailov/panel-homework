@@ -1,0 +1,6 @@
+<h1>Update a course</h1>
+	<%= form_for @course do |f| %>
+	<div>Name: <%= f.text_field :name %></div>
+	<div>Total: <%= f.text_field :total %></div>
+	<%= f.submit %>
+	<% end %>
