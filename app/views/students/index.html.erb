@@ -4,6 +4,6 @@
 	<%= s.fname %>
 <% end %>
 
-<%= form_for @student, url: {:controller, "assign"} do |f| %>
-<%= f.select :cohort_id, options_from_collection_for_select(Cohort.all, "id", "name") %></div>
-<% end %>
+<%#= form_for @student, url: {:controller, "assign"} do |f| %>
+<%#= f.select :cohort_id, options_from_collection_for_select(Cohort.all, "id", "name") %>
+<%# end %>
