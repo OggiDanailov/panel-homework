@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "/instructor/:id" => "instructors#show", :as => "instructor"
+  get "students" => "students#index"
   resources :cohorts
   resources :courses
   devise_for :admins

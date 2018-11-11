@@ -1,0 +1,8 @@
+<div>List of cohorts</div>
+<br>
+<% @cohorts.each do |c| %>
+	<div><a href="/cohorts/<%= c.id %>">Name of cohort: <%= c.name %></a></div>
+	<div>Course: <%= c.course.name %></div>
+	<div>Instructor: <%= c.instructor.lname %> (<%= c.instructor.fname %>)</div>
+
+<% end %>
