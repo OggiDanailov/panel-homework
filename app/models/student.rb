@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
- belongs_to :cohort, optional: true
+ has_and_belongs_to_many :cohorts, optional: true
 
 
   # Include default devise modules. Others available are:

@@ -31,6 +31,8 @@ class CohortsController < ApplicationController
 
 
 
+
+
 	private
 
 	def cohort_params

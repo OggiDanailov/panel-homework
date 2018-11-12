@@ -8,20 +8,22 @@ class StudentsController < ApplicationController
 
 	def show
 		@student = current_student
-		puts "the cohort id is #{ @student.cohort_id}"
+		@student_cohorts = @student.cohorts
+		@cohorts = Cohort.all
+
 	end
 
 	def assign
 		student = Student.find(current_student.id)
-		student.update(student_params)
-		student.save
-		redirect_to "/students"
+		cohort = Cohort.find(params[:cohortid])
+		student.cohorts << cohort
+		redirect_to "/student/#{student.id}"
 	end
 
 	private
 
 	def student_params
-		params.require(:student).permit(:cohort_id, :email, :fname, :lname, :age)
+		params.require(:student).permit(:email, :fname, :lname, :age)
 	end
 
 end
