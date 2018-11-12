@@ -1,18 +1,19 @@
 <h1>Student info:</h1>
-<%= @student.fname %>
+<div>Current Student: <%= @student.fname %></div>
 
 <% @student_cohorts.each do |loop|  %>
-	<%= loop.name %>
+	<div>Current Cohorts: <%= loop.name %></div>	
 <% end %>
 
 
 <% @cohorts.each do |c| %>
-    <%= c.name  %>
-    <hr>
+	<div class='cohorts'>
+    <div><%= c.name  %></div>
 	<%= form_for @student, url: { action: 'assign', controller: 'students' }, html: {method: 'post'} do |r| %>
     <%= hidden_field_tag "id", @student.id %>    
     <%= hidden_field_tag "cohortid", c.id %>
 <%= r.submit "Add cohort" %>
+	</div>
 
 <% end %>
 

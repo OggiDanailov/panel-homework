@@ -1,8 +1,8 @@
 <h1>List of all courses:</h1>
 
-<div>
-	<div><% @courses.each do |c| %></div>
+	<% @courses.each do |c| %>
+<div class='main-list'>
 		<div><a href="/courses/<%= c.id %>"><%= c.name %></a></div>
 		<div><%= c.total %></div>
-		<% end %>
 </div>
+		<% end %>
