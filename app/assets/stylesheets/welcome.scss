@@ -1,3 +1,27 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nav1 {
+	border: 2px solid red;
+	margin: 0 auto;
+	width: 80%;
+	text-align: center;
+	background-color: salmon;
+}
+
+.nav1 div {
+	border: 2px solid blue;
+	width: 30%;
+	height: 50px;
+	display: inline-block;
+	margin: 10px auto;
+	line-height: 50px;
+	background-color: teal;
+	border-radius: 10px;
+}
+
+.title-main {
+	border: 2px solid red;
+	width: 80%;
+	margin: 20px auto;
+	background-color: teal;
+	border-radius: 10px;
+	text-align: center;	
+}

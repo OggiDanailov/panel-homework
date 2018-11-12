@@ -11,20 +11,28 @@
 
   <body>
     <nav>
+     <li> <%= link_to 'Home', root_path %></li>
+
       <% if admin_signed_in? %>
         <li><%= link_to "Sign Out as Admin" , destroy_admin_session_path, method: :delete %></li>
         <li><%= link_to "create a new course", new_course_path %></li>
+        <li><%= current_admin.email %></li>
       <% end %> 
 
       <% if instructor_signed_in? %> 
+        <li><%=current_instructor.fname %></li>
         <li><%= link_to "Sign Out as Instructor" , destroy_instructor_session_path, method: :delete %></li>
-        <li><%= link_to "my Profile", instructor_path(current_instructor) %></li>
+        <li><%= link_to "my Instructor Profile", instructor_path(current_instructor) %></li>
       
         <% end %>
-        <% if !instructor_signed_in? && !admin_signed_in? %>
+        <% if !instructor_signed_in? && !admin_signed_in?  %>
         <li><%= link_to "Sign in as Instructor", new_instructor_session_path %></li>
         <% end %>
         
+        <% if student_signed_in? %>
+        <li><a href="/student/<%=current_student.id %>"><%=current_student.fname %></a></li>
+          <li><%= link_to "Sign out as Student", destroy_student_session_path, method: :delete %> </li>
+        <% end %>
     </nav>
 
 

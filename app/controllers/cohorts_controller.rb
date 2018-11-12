@@ -1,7 +1,6 @@
 class CohortsController < ApplicationController
-
-	before_action :authenticate_instructor!, :except => [:index, :show]
 	
+	before_action :authenticate_instructor!, :except => [:index, :show]
 	def index
 		@cohorts = Cohort.all
 	end

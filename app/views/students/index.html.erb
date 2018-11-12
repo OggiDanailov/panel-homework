@@ -1,9 +1,18 @@
 <h1>List of all students</h1>
 
 <% @students.each do |s| %>
-	<%= s.fname %>
+<div class='user-list'>
+	<div><%= s.fname %></div>
+	<div><%= s.lname %></div>
+	<div><%= s.email %></div>
+		<% if s.cohort_id != nil %>
+	<div><%= s.cohort.name %></div>	
+		<% else %>
+		<div><a href="/student/<%= s.id %>"><button>Join cohort</button></a></div>	
+		<% end %>
+</div>	
+
+	
 <% end %>
 
-<%#= form_for @student, url: {:controller, "assign"} do |f| %>
-<%#= f.select :cohort_id, options_from_collection_for_select(Cohort.all, "id", "name") %>
-<%# end %>
+
