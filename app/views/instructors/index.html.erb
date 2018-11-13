@@ -1,2 +1,7 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<h1 class='main-list'>List of all Instructors</h1>
+
+<% @instructors.each do |c| %>
+<div class='main-list'>
+		<div>Name: <%= c.fname %> <%= c.lname%></a></div>
+</div>
+		<% end %>

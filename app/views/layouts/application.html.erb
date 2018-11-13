@@ -12,6 +12,7 @@
   <body>
     <nav class='navbar'>
      <li> <%= link_to 'Home', root_path %></li>
+
       <% if admin_signed_in? %>
         <li><%= link_to "Sign Out as Admin" , destroy_admin_session_path, method: :delete %></li>
         <li><%= link_to "create a new course", new_course_path %></li>
@@ -23,7 +24,12 @@
 
       <% if !instructor_signed_in? && !admin_signed_in? && !student_signed_in?  %>
         <li><%= link_to "Sign in as Instructor", new_instructor_session_path %></li>
+        <li><%= link_to "Sign in as Student", new_student_session_path %></li>
+        <li><%= link_to "All courses", courses_path %></li>
+        <li><%= link_to "All instructors", instructors_path %></li>
         <% end %>
+
+
       <% if instructor_signed_in? %> 
         <li><%= link_to "Sign Out as Instructor" , destroy_instructor_session_path, method: :delete %></li>
         <li><%= link_to "my Instructor Profile", instructor_path(current_instructor) %></li>

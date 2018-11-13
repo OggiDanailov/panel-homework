@@ -1,8 +1,8 @@
-<h1 class='main-title'>List of all courses:</h1>
+<h1 class='title-main'>List of all courses:</h1>
 
 	<% @courses.each do |c| %>
 <div class='main-list'>
-		<div><a href="/courses/<%= c.id %>"><%= c.name %></a></div>
-		<div><%= c.total %></div>
+		<div><a href="/courses/<%= c.id %>">Name: <%= c.name %></a></div>
+		<div>Credits: <%= c.total %></div>
 </div>
 		<% end %>

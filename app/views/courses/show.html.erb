@@ -1,9 +1,18 @@
-<h1>Course: </h1>
+<h1 class='title-main'>Course: </h1>
 
 
-<div>
+<div class='main-list'>
 	<div><%= @course.name %></div>
 	<div><%= @course.total %></div>
 </div>
 
+<h3 class='secondary-title'>Existing cohorts with this course: </h3>
+
+	<% @course.cohorts.each do |c| %>
+		<div><%= c.name %></div>
+	<% end %>
+
+
+<% if current_instructor %>
 <%= button_to "Update Course", edit_course_path(@course), method: :get %>
+<% end %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  
 
   root "welcome#index"
+  get "/instructors" => "instructors#index", :as => "instructors"
   get "/instructor/:id" => "instructors#show", :as => "instructor"
   get "/students" => "students#index"
   get "/student/:id" => "students#show"

@@ -1,13 +1,20 @@
-* {
-	margin: 0;
-	padding: 0;
-	font-family: Verdana;
-	color: black;
+.title-main, .main-list  {
+	margin: 30px auto;
+	width: 60%;
+	border: $main-border;
+	text-align: center;
+	padding: $main-padding;
+	background-color: $main-background-color;
+}
 
+.secondary-title {
+	margin: 30px auto;
+	width: 50%;
+	border: $main-border;
+	text-align: center;
+	padding: $main-padding;
+	background-color: $secondary-background-color;
 }
 
 
-@import "navbar";
-@import "welcome";
-@import "students";
-@import "cohorts";
+
