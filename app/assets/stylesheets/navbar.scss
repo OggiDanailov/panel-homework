@@ -1,0 +1,30 @@
+$main-background-color: #D3D3D3;
+$secondary-background-color: teal;
+
+.navbar {
+	width: 100%;
+	height: 100px;
+	background-color: $main-background-color;
+	text-align: center;
+}
+
+.navbar li {
+	display: inline-block;
+	line-height: 100px;
+	margin: 0 10px;	
+}
+
+.navbar li a {
+	text-decoration: none;
+}
+.navbar li a:hover {
+	color: salmon;
+}
+
+
+.current-user {
+	position: aboslute;
+	left: 15%;
+	background-color: $secondary-background-color;
+	padding: 0 10px;
+}

@@ -1,9 +1,14 @@
 <h1>Student info:</h1>
 <div>Current Student: <%= @student.fname %></div>
 
-<% @student_cohorts.each do |loop|  %>
-	<div>Current Cohorts: <%= loop.name %></div>	
+ 	<hr>
+<% @student_cohorts.each_with_index do |loop, index|  %>
+	<div>Current Cohorts: <%= loop.name %></div>
+							<% all_cohorts = Cohort.find(@student.cohorts.ids) %>
+							<div>Course: <%= all_cohorts[index].course.name %></div>
+
 <% end %>
+
 
 
 <% @cohorts.each do |c| %>
