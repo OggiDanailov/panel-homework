@@ -5,10 +5,13 @@
 	<div><%= s.fname %></div>
 	<div><%= s.lname %></div>
 	<div><%= s.email %></div>
-		<% if s.cohort_id != nil %>
-	<div><%= s.cohort.name %></div>	
+		<% if s.cohorts != nil %>
+			<% s.cohorts.each_with_index do |c,index| %>
+			<% array = s.cohorts.ids %>
+			<div><a href="/cohorts/<%= array[index] %>"><%= c.name %></a></div>
+			<% end %>	
 		<% else %>
-		<div><a href="/student/<%= s.id %>"><button>Join cohort</button></a></div>	
+			<div><a href="/student/<%= s.id %>"><button>Join cohort</button></a></div>	
 		<% end %>
 </div>	
 

@@ -9,7 +9,10 @@
 <h3 class='secondary-title'>Existing cohorts with this course: </h3>
 
 	<% @course.cohorts.each do |c| %>
-		<div><%= c.name %></div>
+	<div class='main-list'>
+		<div><a href="/cohorts/<%= c.id %>">Cohort Name: <%= c.name %></a></div>
+		<div><%= c.instructor.lname %> (<%=c.instructor.fname %>)</div>
+	</div>
 	<% end %>
 
 

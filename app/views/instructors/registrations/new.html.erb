@@ -1,8 +1,8 @@
-<h2>Sign up as an Instructor</h2>
+<h2 class='title-main'>Sign up as an Instructor</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<div class='main-list'>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -45,6 +45,10 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  <h6 class='button-sign'>Already an Instructor? Please click below: </h6>
+  <button class='devise-buttons'><%= render "instructors/shared/links" %></button>
 <% end %>
+</div>
 
-<%= render "instructors/shared/links" %>
+
+
