@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/students" => "students#index"
   get "/student/:id" => "students#show"
   post "/assign" => "students#assign"
+
+  delete "/remove_cohort" => "students#remove_cohort"
   resources :cohorts
   resources :courses
   devise_for :admins

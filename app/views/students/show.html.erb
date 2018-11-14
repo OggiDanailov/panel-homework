@@ -7,8 +7,16 @@
 							<% all_cohorts = Cohort.find(@student.cohorts.ids) %>
 							<div>Course: <%= all_cohorts[index].course.name %></div>
 
+<%= form_for @student, url: {action: "remove_cohort", controller: 'students'}, html: {method: 'delete'} do |f| %>
+<%= hidden_field_tag :cohort_id, @student.cohorts.ids %>
+<%= f.submit %>
+
+<% end %>
 <% end %>
 
+
+<hr>
+<hr>
 
 
 <% @cohorts.each do |c| %>

@@ -20,6 +20,15 @@ class StudentsController < ApplicationController
 		redirect_to "/student/#{student.id}"
 	end
 
+
+	def remove_cohort
+		student = current_student
+		cohort = Cohort.find(params[:cohort_id])
+		student.cohorts.delete(cohort)
+		redirect_to "/student/#{student.id}"
+
+	end
+
 	private
 
 	def student_params
