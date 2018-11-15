@@ -2,6 +2,6 @@
 
 <% @instructors.each do |c| %>
 <div class='main-list'>
-		<div>Name: <%= c.fname %> <%= c.lname%></a></div>
+		<div><a href='/instructor/<%= c.id%>'>Name: <%= c.fname %> <%= c.lname%></a></div>
 </div>
 		<% end %>

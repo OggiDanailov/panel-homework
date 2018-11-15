@@ -1,16 +1,19 @@
-<h1>Instructors#show</h1>
-<p>Find me in app/views/instructors/show.html.erb</p>
-
-<%= @instructor.fname %>
-<%= @instructor.lname %>
-<%= @instructor.email %>
-<%= @instructor.cohorts %>
+<h1>Profile of <%= @instructor.fname %> <%= @instructor.lname %></h1>
 
 
-<h2>Create a new cohort</h2>
 
-<%= form_for @cohort do |f| %>
-<div>Name: <%= f.text_field :name %></div>
-<div>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
-<%= f.submit %>
+<div><%= @instructor.email %></div>
+<% @instructor.cohorts.each_with_index do |c, index| %>
+<div><%= index + 1%> <%=c.name %></div>
+<% end %>
+
+
+<% if current_instructor %>
+	<h2>Create a new cohort</h2>
+
+	<%= form_for @cohort do |f| %>
+	<div>Name: <%= f.text_field :name %></div>
+	<div>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
+	<%= f.submit %>
+	<% end %>
 <% end %>

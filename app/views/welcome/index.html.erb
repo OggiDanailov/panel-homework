@@ -31,6 +31,14 @@
     <li><%= link_to "Instructor Sign Out", destroy_instructor_session_path, method: :delete %></li>
   <% end %>
 
+  <% if student_signed_in? %>
+  <li><%= link_to "All Cohorts", cohorts_path %></li>
+  <li><%= link_to "All Students", students_path %></li>
+  <li><a href="/student/<%=current_student.id %>">Student: <%=current_student.fname %></a></li>
+  <li><%= link_to "Students", students_path %></li>
+  <li><%= link_to "Student Sign Out", destroy_student_session_path, method: :delete %></li>
+  <% end %>
+
 <% if !admin_signed_in? && !instructor_signed_in? && !student_signed_in? %>
   	<li><%= link_to "Admin", new_admin_registration_path %></li>
   	<li><%= link_to "Instructor", new_instructor_registration_path %></li>
