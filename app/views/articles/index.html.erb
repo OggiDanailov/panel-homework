@@ -1,0 +1,10 @@
+<h1 class='title-main'>List of all articles: </h1>
+
+
+<% @articles.each do |a| %>
+<div class='main-list'>
+	<a href="/articles/<%= a.id %>"><div><%= a.title %></div></a>
+	<div><%= raw(a.content) %></div>
+	<div><a href="/instructor/<%= a.instructor.id %>"><%= a.instructor.lname %></a></div>
+</div>
+<% end %>

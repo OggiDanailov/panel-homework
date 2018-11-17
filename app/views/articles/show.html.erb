@@ -1,0 +1,8 @@
+<h1 class='title-main'><%= @article.title %></h1>
+<h4 class='secondary-title'> <i><h5>Author</h5></i> <%= @article.instructor.fname %> <%= @article.instructor.lname %></h4>
+
+<div class="main-list"><%= raw(@article.content) %></div>
+
+<% if current_instructor %>
+	<div class='elements'><%= link_to "Edit",  edit_article_path, class: 'btn btn-default' %></div>
+<% end %>

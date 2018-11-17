@@ -1,20 +1,43 @@
-<h1>Profile of <%= @instructor.fname %> <%= @instructor.lname %></h1>
+<h1 class='title-main'>Profile of <%= @instructor.fname %> <%= @instructor.lname %></h1>
 
 
 
-<div><%= @instructor.email %></div>
+<div class='title-main'><%= @instructor.email %></div>
+
 <% @instructor.cohorts.each_with_index do |c, index| %>
-<div><%= index + 1%> <%=c.name %></div>
+<div class='title-main'>Cohorts: <%= index + 1%> <%=c.name %></div>
 <% end %>
 
 
 <% if current_instructor %>
-	<h2>Create a new cohort</h2>
+	<h2 class='title-main'> Create a new cohort</h2>
 
 	<%= form_for @cohort do |f| %>
-	 <div style='width: 50%'>Name:<%= f.cktext_area :name, rows: 10 %></div>
-	 <%#= f.text_field :name %>
-	<div>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
-	<%= f.submit %>
+	 <%#= f.cktext_area :name, rows: 10 %>
+	<div class='main-list'>
+		 <div class='elements'>Name:<%= f.text_field :name %></div>
+		<div class='elements'>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
+		<div class='elements'><%= f.submit class: 'btn btn-default' %></div>
+	</div>
 	<% end %>
+
+	<h2 class='title-main'>Create a new Article</h2>
+
+	<%= form_for @article , url: {controller: "articles", action: "create"}, html: {method: 'post'} do |f| %>
+		<div class='main-list'>Article's Title <%= f.text_field :title %></div>
+		<div class='cktext-form'><%= f.cktext_area :content, rows: 10 %></div>
+		<div><%= f.submit class: 'btn btn-default' %></div>
+	<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
 <% end %>

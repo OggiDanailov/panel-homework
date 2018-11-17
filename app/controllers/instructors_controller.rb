@@ -6,6 +6,7 @@ class InstructorsController < ApplicationController
   def show
   	@instructor = Instructor.find(params[:id])
   	@cohort = Cohort.new
+  	@article = Article.new
   end
 
 end

@@ -33,6 +33,7 @@
       <% if instructor_signed_in? %> 
         <li><%= link_to "Sign Out as Instructor" , destroy_instructor_session_path, method: :delete %></li>
         <li><%= link_to "my Instructor Profile", instructor_path(current_instructor) %></li>
+        <li><%= link_to 'articles', articles_path %></li>
       
         <li class='current-user'>Instructor: <%=current_instructor.fname %></li>
         <% end %>

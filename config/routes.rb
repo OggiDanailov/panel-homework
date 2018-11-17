@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
  
-
   root "welcome#index"
   get "/instructors" => "instructors#index", :as => "instructors"
   get "/instructor/:id" => "instructors#show", :as => "instructor"
@@ -11,6 +10,9 @@ Rails.application.routes.draw do
   delete "/remove_cohort" => "students#remove_cohort"
   resources :cohorts
   resources :courses
+  resources :articles do
+    resources :comments
+  end
   devise_for :admins
   devise_for :students
   devise_for :instructors

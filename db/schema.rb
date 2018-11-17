@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_204430) do
+ActiveRecord::Schema.define(version: 2018_11_17_033651) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2018_11_12_204430) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.integer "instructor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cohorts", force: :cascade do |t|
@@ -37,6 +45,15 @@ ActiveRecord::Schema.define(version: 2018_11_12_204430) do
     t.integer "student_id", null: false
     t.index ["cohort_id", "student_id"], name: "index_cohorts_students_on_cohort_id_and_student_id"
     t.index ["student_id", "cohort_id"], name: "index_cohorts_students_on_student_id_and_cohort_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.integer "instructor_id"
+    t.integer "student_id"
+    t.integer "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
