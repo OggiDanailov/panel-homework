@@ -5,6 +5,7 @@
 <div class='main-list'>
 	<a href="/articles/<%= a.id %>"><div><%= a.title %></div></a>
 	<div><%= raw(a.content) %></div>
+	<div><%= a.category %></div>
 	<div><a href="/instructor/<%= a.instructor.id %>"><%= a.instructor.lname %></a></div>
 </div>
 <% end %>

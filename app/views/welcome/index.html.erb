@@ -44,8 +44,25 @@
   	<li><%= link_to "Instructor", new_instructor_registration_path %></li>
   	<li><%= link_to "Student", new_student_registration_path %></li>
     <li><%= link_to "Courses", courses_path, method: :get %></li>
+    <!-- this is where the dropdown menu starts -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Articles
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">History</a>
+          <a class="dropdown-item" href="#">Geography</a>
+          <a class="dropdown-item" href="#">Biology</a>
+          <a class="dropdown-item" href="#">Chemestry</a>
+          <a class="dropdown-item" href="#">Physics</a>
+          <a class="dropdown-item" href="#">Mathematics</a>
+          <a class="dropdown-item" href="#">Literature</a>
+        </div>
+    </li>
   <% end %>
 </nav>
+
+
 
 
 <h1 class='title-main'>Welcome to my school!!!!!</h1>

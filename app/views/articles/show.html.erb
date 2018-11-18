@@ -6,3 +6,27 @@
 <% if current_instructor %>
 	<div class='elements'><%= link_to "Edit",  edit_article_path, class: 'btn btn-default' %></div>
 <% end %>
+
+<div class='comment-field'>
+	<% @article.comments.each do |c| %>
+	<div class="main-list">
+		<div>Comment: <%= c.content %></div>
+		<% if instructor_signed_in? %>
+			<div><%= c.instructor.lname %></div>
+		<% end %>
+		<% if student_signed_in? %>
+			<div><%= c.student.fname %></div>
+	<% end %>
+	</div>
+	<% end %>
+</div>
+
+<h2 class='title-main'>Comments: </h2>
+
+<%= form_with(model: [@article, @article.comments.build], local: true)   do |f| %>
+<div class='main-list '>
+	<div><%= f.text_field :content %></div>
+	<br>
+	<div><%= f.submit class: 'btn btn-default' %></div>
+</div>
+<% end %> 
