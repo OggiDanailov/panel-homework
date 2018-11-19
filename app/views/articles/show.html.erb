@@ -9,14 +9,14 @@
 
 <div class='comment-field'>
 	<% @article.comments.each do |c| %>
-	<div class="main-list">
+	<div class="main-list" id="comment_<%= c.id %>" >
 		<div>Comment: <%= c.content %></div>
-		<% if instructor_signed_in? %>
-			<div><%= c.instructor.lname %></div>
+		<% if c.instructor_id != nil %>
+			<div><%= c.instructor.fname %></div>
 		<% end %>
-		<% if student_signed_in? %>
+		<% if c.student_id != nil %>
 			<div><%= c.student.fname %></div>
-	<% end %>
+		<% end %>
 	</div>
 	<% end %>
 </div>
