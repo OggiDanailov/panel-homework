@@ -4,5 +4,11 @@
 <div class='main-list'>
 		<div><a href="/courses/<%= c.id %>">Name: <%= c.name %></a></div>
 		<div>Credits: <%= c.total %></div>
+
+		<div class='main-list'>Cohorts for this course:
+			<% c.cohorts.each do |coh| %>
+			<div><a href="/cohorts/<%= coh.id %>"><%= coh.name %></a></div>
+			<% end %>
+		</div>
 </div>
 		<% end %>

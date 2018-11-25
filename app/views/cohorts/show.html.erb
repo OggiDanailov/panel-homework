@@ -11,3 +11,7 @@
 			<% end %>
 	</div>
 </div>
+
+<% if current_instructor.lname == @cohort.instructor.lname %>
+	<%= link_to "Edit", edit_cohort_path %>
+	<% end %>

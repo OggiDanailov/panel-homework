@@ -4,13 +4,13 @@
 	width: 90%;
 	margin: 0 auto;
 	display: grid;
-	border: $main-border;
+	// border: $main-border;
 	grid-template-columns: 1fr 1fr;
 }
 
 .welcome-elements {
 	height: 500px;
-	border: $main-border;
+	// border: $main-border;
 	width: 95%;
 	margin: 5px auto;
 }
@@ -23,7 +23,7 @@
 .welcome-images {
 	width: 90%;
 	margin: 20px auto;
-	border: $main-border;
+	// border: $main-border;
 	height: 200px;
 }
 
@@ -43,12 +43,12 @@
 }
 
 .d {
-	background-image: url("https://thumbs.dreamstime.com/z/social-media-icons-set-network-symbols-pictograms-computer-electronic-mobile-devices-isolated-vector-illustration-40030810.jpg");
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIAGyiUGz7wQP1S37dP97ZWHt2FiIK6QDfrT-9VkCwFSiED29");
 	background-size: 100% 100%;
 }
 
 .e {
-	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOVZ4BBBRupIZtqDpTbVPBFUBHR_vKRUvs6bPpEq9uHJsHww2Bsg");
+	background-image: url("https://img.freepik.com/free-icon/opened-email-envelope_318-44146.jpg?size=338&ext=jpg");
 	background-size: 100% 100%;
 }
 
@@ -59,7 +59,7 @@
 
 
 .bigger-image {
-	background-image: url("https://image.shutterstock.com/z/stock-photo-school-educations-pictogram-icons-set-211277092.jpg");
+	background-image: url("https://t4.ftcdn.net/jpg/00/89/87/73/500_F_89877334_YVsDGQuRvvvSCJg5xjvAZ9kunY3qRLvp.jpg");
 	background-size: 100% 100%;
 }
 

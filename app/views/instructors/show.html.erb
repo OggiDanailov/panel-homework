@@ -7,6 +7,11 @@
 <% @instructor.cohorts.each_with_index do |c, index| %>
 <div class='title-main'>Cohorts: <%= index + 1%> <%=c.name %></div>
 <% end %>
+<div>
+	<% @instructor.articles.each do |a| %>
+	<div class='main-list'>Articles: <a href="/articles/<%=a.id %>"><%= a.title %></a></div>
+	<% end %>
+</div>
 
 
 <% if current_instructor %>
