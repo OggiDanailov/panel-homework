@@ -40,6 +40,11 @@ class CohortsController < ApplicationController
 	end
 
 
+	def destroy
+		@cohort = Cohort.find(params[:id])
+		@cohort.destroy
+		redirect_to "/cohorts"
+	end	
 
 
 	private

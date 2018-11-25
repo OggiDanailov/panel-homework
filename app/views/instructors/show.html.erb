@@ -5,7 +5,7 @@
 <div class='title-main'><%= @instructor.email %></div>
 
 <% @instructor.cohorts.each_with_index do |c, index| %>
-<div class='title-main'>Cohorts: <%= index + 1%> <%=c.name %></div>
+<div class='title-main'>Cohorts:<a href="/cohorts/<%= c.id %>"> <%= index + 1%> <%=c.name %></a></div>
 <% end %>
 <div>
 	<% @instructor.articles.each do |a| %>
