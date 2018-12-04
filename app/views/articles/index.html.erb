@@ -4,7 +4,7 @@
 <% @articles.each do |a| %>
 <div class='main-list'>
 	<a href="/articles/<%= a.id %>"><div><%= a.title %></div></a>
-	<div><%= raw(a.content) %></div>
+	<div><%= raw(a.content.first(350)) %></div>
 	<div><%= a.category %></div>
 	<div><a href="/instructor/<%= a.instructor.id %>"><%= a.instructor.lname %></a></div>
 </div>
