@@ -26,11 +26,25 @@ class CohortsController < ApplicationController
 	end
 
 
+	def edit
+		@cohort = Cohort.find(params[:id])
+	end
+
+	def update
+		@cohort = Cohort.find(params[:id])
+	    if @cohort.update(cohort_params)
+	      redirect_to "/cohorts/#{@cohort.id}"
+	    else
+	      render "/cohorts/#{@cohort.id}/edit"
+	    end
+	end
 
 
-
-
-
+	def destroy
+		@cohort = Cohort.find(params[:id])
+		@cohort.destroy
+		redirect_to "/cohorts"
+	end	
 
 
 	private
