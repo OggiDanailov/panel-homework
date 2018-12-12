@@ -64,6 +64,27 @@
 }
 
 
+.wrapper-welcome {
+	border: 2px solid orange;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 0.2fr .6fr .2fr;
+	padding: 10px;
+}
+
+.left-welcome {
+	margin: 10px;
+}
+
+.middle-welcome {
+	margin: 10px;
+}
+
+.right-welcome {
+	margin: 10px;
+}
+
+
 
 
 
