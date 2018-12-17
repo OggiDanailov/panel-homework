@@ -22,6 +22,7 @@
 <% @cohorts.each do |c| %>
 	<div class='cohorts'>
     <div><%= c.name  %></div>
+    <div><%= c.course.name %></div>
 	<%= form_for @student, url: { action: 'assign', controller: 'students' }, html: {method: 'post'} do |r| %>
     <%= hidden_field_tag "id", @student.id %>    
     <%= hidden_field_tag "cohortid", c.id %>
