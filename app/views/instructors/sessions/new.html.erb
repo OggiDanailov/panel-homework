@@ -21,9 +21,9 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", :class => "btn btn-success btn-devise" %>
     <div>
-      <button class='devise-buttons'><%= render "instructors/shared/links" %></button>
+      <button class='btn btn-success btn-signIn' ><%= render "instructors/shared/links" %></button>
     </div>
   </div>
 <% end %>

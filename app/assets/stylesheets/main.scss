@@ -1,3 +1,7 @@
+* {
+	font-size: $main-font;
+}
+
 .title-main, .main-list  {
 	margin: 30px auto;
 	width: 60%;
@@ -16,19 +20,26 @@
 	background-color: $secondary-background-color;
 }
 
-.devise-buttons {
-	padding: 2px 10px;
-	border-radius: 5px;
-	border: 1px solid;
+.btn-devise {
+	margin: 20px 0px;
 }
 
 .devise-buttons a {
 	text-decoration: none;
 }
 
+
 .button-sign {
 	margin: 5px auto;
 	font-style: italic;
+}
+.btn-signIn {
+	background: turquoise;
+	color: white;
+}
+
+.btn-primary {
+	color: white;
 }
 
 .elements {
@@ -37,17 +48,11 @@
 }
 
 .cktext-form {
-	width: 90%;
+	width: 80%;
 	margin: 10px auto;
 }
 
-
-
-
-
-
-
-
-
-
+.input-group-text {
+	margin: 0 auto;
+}
 

@@ -43,10 +43,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => "btn btn-success btn-devise" %>
   </div>
   <h6 class='button-sign'>Already an Instructor? Please click below: </h6>
-  <button class='devise-buttons'><%= render "instructors/shared/links" %></button>
+  <button class='btn btn-success btn-signIn'><%= render "instructors/shared/links" %></button>
 <% end %>
 </div>
 
