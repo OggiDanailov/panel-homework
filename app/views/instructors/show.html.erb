@@ -22,6 +22,12 @@
 	<div class='main-list'>
 		 <div class='elements'>Name:<%= f.text_field :name %></div>
 		<div class='elements'>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
+
+		<%= datepicker_input f, :starting_date%>
+		<%= datepicker_input f, :closing_date%>
+
+
+
 		<div class='elements'><%= f.submit class: 'btn btn-default' %></div>
 	</div>
 	<% end %>

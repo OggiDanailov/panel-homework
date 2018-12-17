@@ -11,7 +11,7 @@ gem 'devise'
 gem 'bootstrap'
 gem 'ckeditor'
 gem 'jquery-rails'
-
+gem 'bootstrap-datepicker-rails'
 gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
