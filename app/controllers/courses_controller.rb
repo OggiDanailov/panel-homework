@@ -52,6 +52,6 @@ class CoursesController < ApplicationController
 	private
 
 	def course_params
-		params.require(:course).permit(:name, :total)
+		params.require(:course).permit(:name, :total, :description)
 	end
 end

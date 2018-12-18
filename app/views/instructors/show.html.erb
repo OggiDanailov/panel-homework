@@ -5,7 +5,14 @@
 <div class='title-main'><%= @instructor.email %></div>
 
 <% @instructor.cohorts.each_with_index do |c, index| %>
-<div class='title-main'>Cohorts:<a href="/cohorts/<%= c.id %>"> <%= index + 1%> <%=c.name %></a></div>
+<div class='title-main'>Cohorts:
+	<br>
+	<a href="/cohorts/<%= c.id %>"> <%=c.name %></a>
+	<div><a href="/courses/<%= c.course.id %>">Course: <%= c.course.name %></a></div>
+	<div>Dates: <%= c.starting_date %> - <%= c.closing_date %></div>
+	<div>Day: <%= capit(c.days) %></div>
+	<div>Hours of classes: <%= c.starting_hour.hour %> - <%= c.closing_hour.hour %></div>
+</div>
 <% end %>
 <div>
 	<% @instructor.articles.each do |a| %>
@@ -26,11 +33,13 @@
 		<div class='elements date-inputs'>Starting date: <%= datepicker_input f, :starting_date%></div>
 		<div class='elements date-inputs'>Last date: <%= datepicker_input f, :closing_date%></div>
 
-		<div class='elements date-inputs'>From: <%= f.select :starting_hour, '1'..'24' %></div>
+		<div class='elements '>From: <%= f.select :starting_hour, '1'..'24' %></div>
 
-		<div class='elements date-inputs'>To: <%= f.select :closing_hour, '1'..'24' %></div>
+		<div class='elements '>To: <%= f.select :closing_hour, '1'..'24' %></div>
 
-		
+		<div class='elements'> <%= f.select :days, collection_for_select: @days %></div>
+
+
 
 
 
