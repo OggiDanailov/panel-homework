@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   delete "/remove_cohort" => "students#remove_cohort"
   
-  resources :cohorts
+  resources :cohorts do 
+      resources :exams
+  end
   resources :courses
   resources :articles do
     resources :comments

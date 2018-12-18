@@ -1,0 +1,18 @@
+This is the Exam page!
+
+<div>Cohort name: <%= @cohort.name %></div>
+<div>Course: <%= @cohort.course.name %></div>
+<div>Instructor: <%= current_instructor.lname %></div>
+<div>Current Students: </div>
+
+<% @cohort.students.each_with_index do |c, index| %>
+<hr>
+	 <%=index + 1 %>. <%= c.fname %> 
+	<%= c.lname %>
+	<%= form_for [@cohort, @exam] do |f| %>
+		Grade: <%= f.text_field :grade %>
+		<%= f.submit "Grade", :class => 'btn-signIn' %>
+	<% end %>
+
+<% end %>
+
