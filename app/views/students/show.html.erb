@@ -1,17 +1,17 @@
-<h1>Student info:</h1>
-<div>Current Student: <%= @student.fname %></div>
+<h1 class='title-main'>Student info:</h1>
+<div class='secondary-title'>Current Student: <%= @student.fname %></div>
 
  	<hr>
 <% @student_cohorts.each_with_index do |loop, index|  %>
-	<div>Current Cohorts: <%= loop.name %></div>
-							<% all_cohorts = Cohort.find(@student.cohorts.ids) %>
-							<div>Course: <%= all_cohorts[index].course.name %></div>
+	<div class='main-list'>Current Cohorts: <%= loop.name %></div>
+		<% all_cohorts = Cohort.find(@student.cohorts.ids) %>
+		<div class='main-list'>Course: <%= all_cohorts[index].course.name %></div>
 
-<%= form_for @student, url: {action: "remove_cohort", controller: 'students'}, html: {method: 'delete'} do |f| %>
-<%= hidden_field_tag :cohort_id, @student.cohorts.ids %>
-<%= f.submit %>
+	<%= form_for @student, url: {action: "remove_cohort", controller: 'students'}, html: {method: 'delete'} do |f| %>
+	<%= hidden_field_tag :cohort_id, @student.cohorts.ids %>
+	<%= f.submit %>
 
-<% end %>
+	<% end %>
 <% end %>
 
 
@@ -20,20 +20,20 @@
 
 
 <% @cohorts.each do |c| %>
-	
+
 	<div class='cohorts'>
-    <div>Cohort name: <%= c.name  %></div>
-    <div>Course name: <%= c.course.name %></div>
-    <div>Instructor: <%=c.instructor.lname %></div>
-    <div>Dates: <%=c.starting_date %> - <%= c.closing_date %></div>
-    <div>Hours: <%= c.starting_hour.hour %> - <%= c.closing_hour.hour %></div>
+    <div class='main-list'>Cohort name: <%= c.name  %></div>
+    <div class='main-list'>Course name: <%= c.course.name %></div>
+    <div class='main-list'>Instructor: <%=c.instructor.lname %></div>
+    <div class='main-list'>Dates: <%=c.starting_date %> - <%= c.closing_date %></div>
+    <div class='main-list'>Hours: <%= c.starting_hour.hour %> - <%= c.closing_hour.hour %></div>
 
 	<%= form_for @student, url: { action: 'assign', controller: 'students' }, html: {method: 'post'} do |r| %>
     <%= hidden_field_tag "id", @student.id %>    
     <%= hidden_field_tag "cohortid", c.id %>
-<%= r.submit "Add cohort" %>
+<%= r.submit "Add cohort", :class => 'btn-signIn' %>
 	</div>
-
+	
 <% end %>
 
 <% end %>
