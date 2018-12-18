@@ -7,6 +7,9 @@
 	<div><a href="/cohorts/<%= c.id %>">Name of cohort: <%= c.name %></a></div>
 	<div>Course: <a href="/courses/<%= c.course.id %>"> <%= c.course.name %></a></div>
 	<div>Instructor: <%= c.instructor.lname %> (<%= c.instructor.fname %>)</div>
+	<div>Starting date: <%= c.starting_date %> - Ending Date <%= c.closing_date %></div>
+	<div>Hours from: <%= c.starting_hour.hour %> - <%= c.closing_hour.hour %></div>
+
 </div>
 
 <% end %>

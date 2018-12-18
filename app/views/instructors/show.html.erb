@@ -23,8 +23,14 @@
 		 <div class='elements'>Name:<%= f.text_field :name %></div>
 		<div class='elements'>Options for course: <%= f.select :course_id, options_from_collection_for_select(Course.all, "id", "name") %></div>
 
-		<%= datepicker_input f, :starting_date%>
-		<%= datepicker_input f, :closing_date%>
+		<div class='elements date-inputs'>Starting date: <%= datepicker_input f, :starting_date%></div>
+		<div class='elements date-inputs'>Last date: <%= datepicker_input f, :closing_date%></div>
+
+		<div class='elements date-inputs'>From: <%= f.select :starting_hour, '1'..'24' %></div>
+
+		<div class='elements date-inputs'>To: <%= f.select :closing_hour, '1'..'24' %></div>
+
+		
 
 
 
