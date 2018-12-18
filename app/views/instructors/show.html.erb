@@ -10,7 +10,7 @@
 	<a href="/cohorts/<%= c.id %>"> <%=c.name %></a>
 	<div><a href="/courses/<%= c.course.id %>">Course: <%= c.course.name %></a></div>
 	<div>Dates: <%= c.starting_date %> - <%= c.closing_date %></div>
-	<div>Day: <%= capit(c.days) %></div>
+	<div>Day: <%= c.days %></div>
 	<div>Hours of classes: <%= c.starting_hour.hour %> - <%= c.closing_hour.hour %></div>
 </div>
 <% end %>
