@@ -1,18 +1,27 @@
-This is the Exam page!
+<div class='title-main'>Exam Results for:</div>
+<div class='main-list'>Cohort name: <%= @cohort.name %></div>
+<div class='main-list'>Course: <%= @cohort.course.name %></div>
+<div class='main-list'>Instructor: <%= current_instructor.lname %></div>
+<div class='main-list'>Current Students: </div>
 
-<div>Cohort name: <%= @cohort.name %></div>
-<div>Course: <%= @cohort.course.name %></div>
-<div>Instructor: <%= current_instructor.lname %></div>
-<div>Current Students: </div>
-
+<div class='grading-container'>
+	<div class='to-be-graded'>
+	<h3>List of students to be graded</h3>
 <% @cohort.students.each_with_index do |c, index| %>
-<hr>
 	 <%=index + 1 %>. <%= c.fname %> 
 	<%= c.lname %>
 	<%= form_for [@cohort, @exam] do |f| %>
+		<%= hidden_field_tag :student_id, c.id %>
 		Grade: <%= f.text_field :grade %>
 		<%= f.submit "Grade", :class => 'btn-signIn' %>
 	<% end %>
 
 <% end %>
+	</div>
+	<div class='already-graded'>
+		<h3>Graded Students</h3>
+		
+		
+	</div>
 
+</div>

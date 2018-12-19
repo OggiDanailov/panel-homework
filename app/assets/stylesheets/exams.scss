@@ -1,3 +1,9 @@
-// Place all the styles related to the exams controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.grading-container {
+	width: 90%;
+	border: 2px solid orange;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px
+}
