@@ -1,0 +1,9 @@
+
+.grading-container {
+	width: 90%;
+	border: 2px solid orange;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px
+}
