@@ -20,7 +20,9 @@
 	</div>
 	<div class='already-graded'>
 		<h3>Graded Students</h3>
-		
+		<% @cohort.students.each_with_index do |c, index| %>
+			<div><%= c.fname %> <%= c.lname %></div>
+		<% end %>
 		
 	</div>
 

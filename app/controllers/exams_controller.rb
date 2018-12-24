@@ -7,10 +7,10 @@ end
 def new
 	@exam = Exam.new
 	@cohort = Cohort.find(params[:cohort_id])
+	@exams = Exam.all
 end
 
 def create
-	puts params[:student_id]
 	@cohort = Cohort.find(params[:cohort_id])
 	@exam = @cohort.exams.new(exam_params)
 	@exam.student_id = params[:student_id]

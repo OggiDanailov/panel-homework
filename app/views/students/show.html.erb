@@ -6,6 +6,18 @@
 	<div class='main-list'>Current Cohorts: <%= loop.name %></div>
 		<% all_cohorts = Cohort.find(@student.cohorts.ids) %>
 		<div class='main-list'>Course: <%= all_cohorts[index].course.name %></div>
+		<% current_cohort =  Cohort.where(course_id: all_cohorts[index].course.id ) %>
+		<% current_exam = Exam.where(cohort_id: current_cohort.ids)  %>
+		<% current_grade = current_exam.where(student_id: @student.id) %>
+		<% e =  Exam.where(cohort_id: loop.id) %>
+		<% e.each do |w| %>
+	<div class='main-list'>Grade for this cohort: 
+		
+			<%= w.grade %>
+		<% end %>	
+	
+			
+	</div>
 
 	<%= form_for @student, url: {action: "remove_cohort", controller: 'students'}, html: {method: 'delete'} do |f| %>
 	<%= hidden_field_tag :cohort_id, @student.cohorts.ids %>

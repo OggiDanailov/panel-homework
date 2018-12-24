@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 		@student = current_student
 		@student_cohorts = @student.cohorts
 		@cohorts = Cohort.all
-
+		@exam = Exam.where(student_id: @student.id)			
 	end
 
 	def assign
