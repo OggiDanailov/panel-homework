@@ -14,10 +14,13 @@ Rails.application.routes.draw do
   resources :cohorts do 
       resources :exams
   end
+
   resources :courses
+
   resources :articles do
     resources :comments
   end
+  
   devise_for :admins
   devise_for :students
   devise_for :instructors

@@ -36,6 +36,7 @@
 					<%= c.fname %>
 					 <%= c.lname %>
 					 <span class='graded-student-grade'><%= g.grade %> </span>
+					 <%= link_to "edit", edit_cohort_exam_path(@cohort, e) %>
 				</div>
 			<% end %>
 		<% end %>

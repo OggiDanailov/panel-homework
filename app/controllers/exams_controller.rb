@@ -20,6 +20,10 @@ def create
 	redirect_to :controller => 'exams', :action => 'new'
 end
 
+def edit
+
+end
+
 
 
 	def exam_params
