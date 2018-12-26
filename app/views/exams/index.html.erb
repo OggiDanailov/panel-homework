@@ -1,5 +1,9 @@
 List of all exams:
 
 <% @exams.each do |e| %>
-<%= e.grade %>
+<div>
+<div>Grade: <%= e.grade %></div>
+<div>Student: <%= e.student.fname %></div>
+</div>
+<hr>
 <% end %>

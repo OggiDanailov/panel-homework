@@ -7,3 +7,21 @@
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 10px
 }
+
+
+.grade-form {
+	border: 3px solid green;
+	margin: 5px;
+	padding: 5px;
+}
+
+.graded-form {
+	background-color: orange;
+	border: 2px solid;
+	margin: 10px 0;
+}
+
+.graded-student-grade {
+	background-color: red;
+	border: 2px solid;
+}

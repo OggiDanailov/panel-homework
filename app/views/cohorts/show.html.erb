@@ -15,5 +15,6 @@
 <% if current_instructor.lname == @cohort.instructor.lname %>
 	<%= link_to "Edit", edit_cohort_path %>
 	<br>
+
 	<%= link_to "Garding Cohort", new_cohort_exam_path(@cohort.id) %>
-	<% end %>
+<% end %>

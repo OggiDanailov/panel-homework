@@ -1,3 +1,5 @@
+
+
 <div class='title-main'>Exam Results for:</div>
 <div class='main-list'>Cohort name: <%= @cohort.name %></div>
 <div class='main-list'>Course: <%= @cohort.course.name %></div>
@@ -6,22 +8,36 @@
 
 <div class='grading-container'>
 	<div class='to-be-graded'>
-	<h3>List of students to be graded</h3>
-<% @cohort.students.each_with_index do |c, index| %>
-	 <%=index + 1 %>. <%= c.fname %> 
-	<%= c.lname %>
-	<%= form_for [@cohort, @exam] do |f| %>
-		<%= hidden_field_tag :student_id, c.id %>
-		Grade: <%= f.text_field :grade %>
-		<%= f.submit "Grade", :class => 'btn-signIn' %>
-	<% end %>
 
+	<h3>List of students to be graded</h3>
+
+<% @cohort.students.each_with_index do |c, index| %>
+	<div class='grade-form'>
+	
+		 <%=index + 1 %>. <%= c.fname %> 
+		<%= c.lname %>
+		<%= form_for [@cohort, @exam] do |f| %>
+			<%= hidden_field_tag :student_id, c.id %>
+
+			Grade: <%= f.select :grade, collection_select: @grades  %>
+
+			<%= f.submit "Grade", :class => 'btn-signIn' %>
+		<% end %>
+	
+	</div>
 <% end %>
 	</div>
 	<div class='already-graded'>
 		<h3>Graded Students</h3>
 		<% @cohort.students.each_with_index do |c, index| %>
-			<div><%= c.fname %> <%= c.lname %></div>
+			<% e = Exam.where(cohort_id: @cohort.id) && Exam.where(student_id: c.id) %>
+			<% e.each do |g| %>
+				<div class='graded-form'>
+					<%= c.fname %>
+					 <%= c.lname %>
+					 <span class='graded-student-grade'><%= g.grade %> </span>
+				</div>
+			<% end %>
 		<% end %>
 		
 	</div>

@@ -8,6 +8,7 @@ def new
 	@exam = Exam.new
 	@cohort = Cohort.find(params[:cohort_id])
 	@exams = Exam.all
+	@grades = [2,3,4,5,6]
 end
 
 def create
