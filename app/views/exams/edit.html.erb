@@ -1,1 +1,11 @@
-This is the editing page for the exams
+<h2>This is the editing page for the exams</h2>
+
+Cohort: <div><%= @cohort.name %></div>
+Course: <div><%= @cohort.course.name %></div>
+Student: <div><%= @exam.student.fname %></div>
+Grade: <div><%= @exam.grade %></div>
+
+<%= form_for([@cohort, @exam]) do |f| %>
+<%= f.select :grade, [2,3,4,5,6] %>
+<%= f.submit "update grade" %>
+<% end %>

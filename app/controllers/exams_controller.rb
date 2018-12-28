@@ -21,6 +21,16 @@ def create
 end
 
 def edit
+	@cohort = Cohort.find(params[:cohort_id])
+	@exam = Exam.find(params[:id])
+end
+
+def update
+	@cohort = Cohort.find(params[:cohort_id])
+	@exam = Exam.find(params[:id])
+	if @exam.update(exam_params)
+		redirect_to :controller => 'exams', :action => 'new'
+	end
 
 end
 
