@@ -1,5 +1,5 @@
 $(document).ready(function(){
-// $(window).on("load", function() {
+
 	console.log('hellow')
 	var examGrade = document.getElementById('exam_grade')
 	var buttons = document.getElementsByClassName("btn-signIn")
@@ -19,4 +19,3 @@ $(document).ready(function(){
 
 
    
-// });

@@ -1,0 +1,41 @@
+.current-student-cohorts {
+	width: 95%;
+	margin: 0 auto;
+	// border: 2px solid orange;
+	// height: 200px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.current-student-cohorts > div {
+	padding: $main-padding;
+	disaply: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	border: $main-border;
+	border-radius: 10px;
+}
+
+.current-student-cohorts > div p{
+	border-bottom: $main-border;
+}
+
+.current-student-cohorts > div p span {
+	font-weight: bold;
+}
+
+.remove-cohort-btn {
+	border: 2px solid red;
+	width: 80%;
+	justify-content: center;
+	display: flex;	
+}
+
+
+
+
+
+
+
+

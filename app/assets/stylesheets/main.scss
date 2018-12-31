@@ -5,7 +5,8 @@
 .title-main, .main-list  {
 	margin: 30px auto;
 	width: 60%;
-	// border: $main-border;
+	border: $main-border;
+	border-radius: 10px;
 	text-align: center;
 	padding: $main-padding;
 	background-color: $main-background-color;
@@ -37,6 +38,8 @@
 	background: turquoise;
 	color: white;
 	padding: 5px;
+	border-radius: 10px;
+	text-align: center;
 }
 
 .btn-primary {
