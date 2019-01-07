@@ -13,7 +13,7 @@
 	disaply: grid;
 	grid-template-columns: 1fr;
 	justify-content: center;
-	border: $main-border;
+	// border: $main-border;
 	border-radius: 10px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .remove-cohort-btn {
-	border: 2px solid red;
+	// border: 2px solid red;
 	width: 80%;
 	justify-content: center;
 	display: flex;	
